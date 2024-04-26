@@ -176,15 +176,16 @@ class Employe:
 
     # Augmentation de salaire
     @staticmethod
-    def augmentation_salaire(N):
-        Employe.augmentation = N
+    def augmentation_salaire():
+        Employe.pourcentage += 0.5
 
     def __init__(self, nom: str = '', salaire: int = 0):
         self.__nom = nom
         self.__salaire = salaire
+        Employe.augmentation_salaire()
 
     def afficher_informations(self):
-        nouveau_sal = self.__salaire + self.__salaire * self.augmentation / 100
+        nouveau_sal = self.__salaire + self.__salaire * self.pourcentage / 100
         print(f"L'employe ave nom: {self.__nom}, est {nouveau_sal} EUR/mois base de salaire.")
 
     def __str__(self):
@@ -198,7 +199,7 @@ print(emp1)
 print(Employe.nombre_employes)
 
 # Augemntation de salaire
-emp1.augmentation_salaire(5)
+emp1.augmentation_salaire()
 
 # Affichage
 emp1.afficher_informations()
