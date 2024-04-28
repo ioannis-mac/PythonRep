@@ -164,7 +164,7 @@ print(compte1)
 """
 
 #act6
-
+"""
 class Employe:
     nombre_employes = 0
     pourcentage = 0
@@ -204,3 +204,145 @@ emp1.augmentation_salaire()
 # Affichage
 emp1.afficher_informations()
 #Peut-etre exprimer les objet a la fin? 
+"""
+
+#act7 
+"""
+class Calculatrice:
+    def __init__(self, x):
+        self.x = x
+
+    def __add__(self, other):
+        return Calculatrice(self.x + other.x)
+
+    def __sub__(self, other):
+        return Calculatrice(self.x - other.x)
+
+#    def __div__(self, other):
+#        if (other.x != 0):
+#            return Calculatrice((self.x)/(other.x))
+#        else: 
+#            print("Vous avez essaye de faire une division par zero. C'est pas possible.")  
+
+    def __truediv__(self, other):
+        if (other.x != 0):
+            return Calculatrice((self.x)/(other.x))
+        else: 
+            print("Vous avez essaye de faire une division par zero. C'est pas possible.")  
+
+    def __mul__(self, other):
+        return Calculatrice(self.x * other.x)
+    
+    def puissance(self, other):
+        return Calculatrice(self.x ** other.x)
+    
+    def racine_carree(self):
+        return Calculatrice(self.x ** 0.5)
+
+# TESTER
+# Addition
+a1 = Calculatrice(5)
+a2 = Calculatrice(2)
+print(f"On va faire les operations entre {a1.x} et {a2.x}")
+resultat1 = a1+a2
+print("The addition: ", resultat1.x)
+
+# Soustriction
+resultat2 = a1-a2
+print("The soustraction: ", resultat2.x)
+
+# Division
+resultat3 = a1 / a2
+print("The division: ", resultat3.x)
+
+#Multiplication
+resultat4 = a1*a2
+print("The multiplication: ", resultat4.x)
+
+# Puissance
+resultat5 = a1.puissance(a2)
+print("La puissance est: ", resultat5.x)
+
+# Racine carree
+resultat6 = a1.racine_carree()
+print(f"La racine carree de {a1.x} est: ", resultat6.x)
+
+"""
+
+#act8
+"""
+class Employe:
+    def __init__(self, nom, annee_embauche):
+        self.nom = nom
+        self.annee_embauche = annee_embauche
+
+    def calculer_salaire_annuel(self):
+        return self.annee_embauche * 12
+    
+class Manager(Employe):
+    def __init__(self, nom, annee_embauche, bonus):
+        super().__init__(nom, annee_embauche)
+        self.bonus = bonus
+    
+    def __calculer_salaire_annuel__(self):
+        return super().calculer_salaire_annuel + self.bonus
+    
+
+class Developpeur(Employe):
+    def __init__(self, nom, annee_embauche, langage):
+        super().__init__(nom, annee_embauche)
+        self.langage = langage
+
+    def affiche_infos(self):
+        print(f"Developpeur: nom= {self.nom}, annee_embauche= {self.annee_embauche} EUR, langage= {self.annee_embauche}.\n")
+
+# TESTER
+e1 = Employe("ioannis", 2700)
+print(f"Salaire annuel de employe avec nom: {e1.nom} est: {e1.calculer_salaire_annuel()} EUR \n")
+
+m1 = Manager("Anissa", 4000, 5000)
+print(f"Salaire annuel de manager avec nom: {m1.nom} est: {m1.calculer_salaire_annuel()} EUR\n")
+
+d1 = Developpeur("Raffaele", 3000, "Java")
+d1.affiche_infos()
+"""
+
+#act9
+
+from abc import ABC, abstractmethod
+
+class Forme(ABC):
+    def __init__(self):
+        super().__init__()
+
+    @abstractmethod
+    def calculer_surface(self):
+        pass
+    
+class Cercle(Forme):
+    def __init__(self, rayon) -> None:
+        super().__init__()
+        self.rayon = rayon
+    
+    def calculer_surface(self):
+        super().calculer_surface()
+        return 3.14 * self.rayon ** 2
+
+class Rectangle(Forme):
+    def __init__(self, longeur, largeur) -> None:
+        super().__init__()
+        self.longeur = longeur
+        self.largeur = largeur
+    
+    def calculer_surface(self):
+        super().calculer_surface()
+        return self.longeur * self.largeur
+    
+
+c1 = Cercle(2)
+r1 = Rectangle(5,10)
+
+print("Le surface de cercle est: ", c1.calculer_surface())
+print("\nLe surface de rectangle est: ", r1.calculer_surface())
+
+f1 = Forme()
