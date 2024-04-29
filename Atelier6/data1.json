@@ -1,0 +1,19 @@
+{
+    "_default": {
+        "1": {
+            "name": "Bob",
+            "score": 2
+        },
+        "2": {
+            "name": "Nefeli",
+            "score": 10
+        },
+        "3": {
+            "name": "Veroniki",
+            "score": 0.6
+        },
+        "4": {
+            "kati": 8
+        }
+    }
+}
