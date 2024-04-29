@@ -1,0 +1,32 @@
+{
+    "_default": {
+        "1": {
+            "name": "Patrick",
+            "score": 10,
+            "role": [
+                "Programmeur_Python"
+            ]
+        },
+        "2": {
+            "name": "Bob",
+            "score": 2,
+            "role": [
+                "Junior"
+            ]
+        },
+        "3": {
+            "name": "Nefeli",
+            "score": 10,
+            "role": [
+                "Junior"
+            ]
+        },
+        "4": {
+            "name": "Veroniki",
+            "score": 0.6,
+            "role": [
+                "Junior"
+            ]
+        }
+    }
+}

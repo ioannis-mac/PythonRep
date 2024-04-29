@@ -53,7 +53,7 @@ print("Données triées par ordre croissant :", donnees_triees)
 """
 
 #act2
-
+"""
 notes_maths = np.random.uniform(10,20, size=20)
 notes_physiques = np.random.uniform(12,18, size=20)
 print(f"notes_maths: \n{notes_maths} \net notes_physiques: \n{notes_physiques}")
@@ -61,6 +61,8 @@ print(f"notes_maths: \n{notes_maths} \net notes_physiques: \n{notes_physiques}")
 print(f"La moyenne de notes_maths: {np.mean(notes_maths)} et de notes_physiques: {np.mean(notes_physiques)}\n")
 print(f"L'ecart-type de notes_maths: {np.std(notes_maths)} et de notes_physiques: {np.std(notes_physiques)}\n")
 print(f"La mediane de notes_mats: {np.median(notes_maths)} et de notes_physiques: {np.median(notes_physiques)}\n")
+
+# Mporeis na arxikopoieis se mia grammi
 
 notes_combined = np.concatenate([notes_maths,notes_physiques], axis=None)
 print(f"La concatenation de matrices est: {notes_combined}\n")
@@ -70,6 +72,8 @@ print(f"La concatenation de matrices est: {notes_combined}\n")
 
 
 # Create the file and write
+# edw tha  borouses na xrhsimopoiohseis thn bibliothiki pandas
+
 import csv
 with open('notes_combined.csv','w', newline='') as fichier:
     colonnes=['Maths', 'Physique']
@@ -78,7 +82,7 @@ with open('notes_combined.csv','w', newline='') as fichier:
     notes = {'Maths':0, 'Physique':0}
     print("notes empty list --------------\n",notes)
     for i in range(0,len(notes_combined)-1,2):
-        if i <=20:
+        if i <= 20:
             notes.update([('Maths', notes_combined[i])])
         else:
             notes.update([('Physique', notes_combined[i])])
@@ -97,6 +101,8 @@ for i,elem in enumerate(notes_combined):
     else:
         mentions[i] = False
 print(f"Le tableau mentions: \n {mentions}")
+# se mia grammi 
+# mentions = notes_combined >=16
 
 #
 etudiants_meritants = np.zeros(len(notes_combined),dtype=int)
@@ -115,6 +121,67 @@ for i,elem in enumerate(notes_combined):
         print(i)
     if elem > 14 :
         notes_combined[i] = 14
+# se enallaktiki
+# indices_sup_15 = no.where(notes_combined > 15)
 
 print("Le notes combined apres remplacement: \n", notes_combined)
+"""
+#act3
 
+#act4
+
+#act5
+
+import tkinter as tk 
+# Étape 1: Définir la classe Contact 
+class Contact: 
+    def __init__(self, nom, numero):
+        self.nom = nom 
+        self.numero = numero 
+    def __str__(self): return f"{self.nom} - {self.numero}" 
+# Étape 2: Créer la classe CarnetAdresses 
+class CarnetAdresses: 
+    def __init__(self):
+        self.contacts = [] 
+    def ajouter_contact(self, contact):
+        self.contacts.append(contact)
+    def get_liste_contacts(self): 
+        return self.contacts
+    
+# Étape 3: Construire l'interface utilisateur avec Tkinter 
+class Application(tk.Tk): 
+    def __init__(self): 
+        super().__init__() 
+        self.title("Carnet d'Adresses") 
+        self.carnet = CarnetAdresses() #instantiation of CarnetAdress so that we can use it after
+        tk.Label(self, text="Nom:").pack() 
+        self.nom_entry = tk.Entry(self) 
+        self.nom_entry.pack() 
+        tk.Label(self, text="Numéro:").pack() 
+        self.numero_entry = tk.Entry(self) 
+        self.numero_entry.pack() 
+        self.ajouter_btn = tk.Button(self, text="Ajouter", command=self.ajouter_contact) 
+        self.ajouter_btn.pack() 
+        self.contacts_text = tk.Text(self, height=10, width=50) 
+        self.contacts_text.pack()
+
+    def ajouter_contact(self): 
+        nom = self.nom_entry.get() 
+        numero = self.numero_entry.get() 
+        if nom and numero: # Vérifier que les champs ne sont pas vides 
+            contact = Contact(nom, numero) 
+            self.carnet.ajouter_contact(contact) 
+            self.mettre_a_jour_affichage() 
+            self.nom_entry.delete(0, tk.END) 
+            self.numero_entry.delete(0, tk.END) 
+    def mettre_a_jour_affichage(self): 
+        self.contacts_text.delete(1.0, tk.END) # so that the entries get updated after adding
+        for contact in self.carnet.get_liste_contacts(): 
+            self.contacts_text.insert(tk.END, str(contact) + "\n") 
+# Fonction d'exécution 
+def main(): 
+    app = Application() 
+    app.mainloop()
+
+if __name__ == "__main__": 
+    main()
