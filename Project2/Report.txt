@@ -1,0 +1,31 @@
+###### Bienvenue dans le rapport de votre machine. La date est 2024-04-30 07:31:54.257655 ####### 
+
+
+ ----- Le logiciel du systeme est mis a jour ----- 
+Hit:1 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu focal InRelease
+Err:1 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu focal InRelease
+  Couldn't create temporary file /tmp/apt.conf.636FdH for passing config to apt-key
+Hit:2 https://packages.microsoft.com/repos/code stable InRelease
+Err:2 https://packages.microsoft.com/repos/code stable InRelease
+  Couldn't create temporary file /tmp/apt.conf.qfChiM for passing config to apt-key
+Hit:3 http://security.ubuntu.com/ubuntu focal-security InRelease
+Err:3 http://security.ubuntu.com/ubuntu focal-security InRelease
+  Couldn't create temporary file /tmp/apt.conf.E9cwBO for passing config to apt-key
+Hit:4 http://us.archive.ubuntu.com/ubuntu focal InRelease
+Err:4 http://us.archive.ubuntu.com/ubuntu focal InRelease
+  Couldn't create temporary file /tmp/apt.conf.2Fzh8R for passing config to apt-key
+Hit:5 http://us.archive.ubuntu.com/ubuntu focal-updates InRelease
+Err:5 http://us.archive.ubuntu.com/ubuntu focal-updates InRelease
+  Couldn't create temporary file /tmp/apt.conf.7TN8PW for passing config to apt-key
+Hit:6 http://us.archive.ubuntu.com/ubuntu focal-backports InRelease
+Err:6 http://us.archive.ubuntu.com/ubuntu focal-backports InRelease
+  Couldn't create temporary file /tmp/apt.conf.2u1kV1 for passing config to apt-key
+Reading package lists...
+Reading package lists...
+
+
+ ----- Les fichiers temporaires du systeme sont nettoye ----- 
+CompletedProcess(args=['sudo', 'rm', '-r', '/tmp'], returncode=1, stdout='', stderr="rm: cannot remove '/tmp': No such file or directory\n")
+
+ ----- La verification du system est termine ------
+CompletedProcess(args=['fsck'], returncode=8, stdout='fsck from util-linux 2.34\n/dev/sda5 is mounted.\n', stderr='e2fsck 1.45.5 (07-Jan-2020)\ne2fsck: Cannot continue, aborting.\n\n\n')
