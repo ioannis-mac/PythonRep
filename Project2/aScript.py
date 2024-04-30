@@ -77,6 +77,7 @@ if __name__ == "__main__":
 
         elif systemNow == 'Windows':
             mis_a_jour_systemWINDOWS()
+            # Et les autres
 
         elif systemNow == "macOS":
             print('Il faut trouver les commandes')
