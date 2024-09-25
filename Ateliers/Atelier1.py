@@ -96,12 +96,12 @@ while b>0:
 """
 
 #act3
-
+"""
 n=int(input("Saisir un nombre SVP: "))
 for i in range(n, n+1):
     i*=i
 print("Le prod est: ", i)
-
+"""
 #act4
 """
 chaine=str(input("Ecrivez un chaine SVP: "))
@@ -133,6 +133,8 @@ for aChar in aWordToList:
         aString=''
 
 list1.append(aString)
+
+# Si un mot commence pas par le lettre 'b' n'affiches pas
 for aWord in list1:
     if (aWord[0] != 'b'):
         list1.remove(aWord)
@@ -183,7 +185,7 @@ for aWord in list1:
     i+=1
 print("Nombre total de chaque mot: ", NombreDeChaqueMot)
 
-#trouver la mots la plus longue
+#trouver la mot la plus longue
 maximumLettres=max(NombreDeChaqueMot)
 index=0
 for elem in NombreDeChaqueMot:

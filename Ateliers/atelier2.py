@@ -26,7 +26,7 @@ print(*[len(word) for word in phrase.split()])
 # syntax: return       arg       splits by ' '
 """
 
-#act5]
+#act5
 """
 aPositif=int(input("saisir un nombre entier positif SVP: "))
 print(sum(range(aPositif)))
